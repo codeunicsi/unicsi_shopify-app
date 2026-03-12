@@ -14,10 +14,11 @@ function verifyHmac(body, hmacHeader) {
   );
 }
 
-export const action = async ({ request }) => {
+export async function action({ request }) {
   const body = await request.text();
   const hmac = request.headers.get("x-shopify-hmac-sha256");
 
+  // If HMAC missing or invalid → return 401
   if (!hmac || !verifyHmac(body, hmac)) {
     return new Response("Unauthorized", { status: 401 });
   }
@@ -26,5 +27,6 @@ export const action = async ({ request }) => {
 
   console.log("Compliance webhook received:", topic);
 
-  return new Response("Webhook received", { status: 200 });
-};
+  // Valid webhook
+  return new Response("OK", { status: 200 });
+}
