@@ -2,7 +2,7 @@
 
 client_id = "fa93076bcceb7b78a3ed817668360340"
 name = "Unicsi Dropshipping India"
-application_url = "https://unicsishopify-app-production.up.railway.app/"
+application_url = "https://unicsi-app-production.up.railway.app/"
 embedded = true
 
 [build]
@@ -24,7 +24,7 @@ api_version = "2026-04"
 scopes = "write_metaobject_definitions,write_metaobjects,write_products"
 
 [auth]
-redirect_urls = [ "https://unicsishopify-app-production.up.railway.app/api/auth" ]
+redirect_urls = [ "https://unicsi-app-production.up.railway.app/api/auth" ]
 
 # Product metafield used by the app to track imported products
 [product.metafields.app.demo_info]
